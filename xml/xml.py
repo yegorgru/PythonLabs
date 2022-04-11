@@ -283,6 +283,9 @@ while True:
 		words = command.split()
 		options = parseOptions(words)
 		file = options.get("f", manager.mCurrentFile)
+		if file == "":
+			ERROR("empty file path")
+			continue
 		DEBUG("save to file " + file)
 		manager.save(file)
 	elif len(words) >= 2 and words[0] == "add" and words[1] == "unit":
