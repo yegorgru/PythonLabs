@@ -1,0 +1,63 @@
+<company>
+  <units>
+    <unit id="0">
+      <unitName>Unit1</unitName>
+      <unitEmployees>
+        <unitEmployee id="0"/>
+        <unitEmployee id="1"/>
+      </unitEmployees>
+    </unit>
+    <unit id="1">
+      <unitName>KKK</unitName>
+      <unitEmployees>
+        <unitEmployee id="2"/>
+        <unitEmployee id="3"/>
+        <unitEmployee id="4"/>
+      </unitEmployees>
+    </unit>
+    <unit id="2">
+      <unitName>UNIT500</unitName>
+      <unitEmployees>
+        <unitEmployee id="5"/>
+      </unitEmployees>
+    </unit>
+  </units>
+  <employees>
+    <employee id="0">
+      <name>Petro_Petrovych</name>
+      <unitId>0</unitId>
+      <rank>1</rank>
+      <experience>2</experience>
+    </employee>
+    <employee id="1">
+      <name>AAA</name>
+      <unitId>0</unitId>
+      <rank>5</rank>
+      <experience>10</experience>
+    </employee>
+    <employee id="2">
+      <name>BBB</name>
+      <unitId>1</unitId>
+      <rank>6</rank>
+      <experience>4</experience>
+    </employee>
+    <employee id="3">
+      <name>CCC</name>
+      <unitId>1</unitId>
+      <rank>100</rank>
+      <experience>0</experience>
+    </employee>
+    <employee id="4">
+      <name>DDD</name>
+      <unitId>1</unitId>
+      <rank>3</rank>
+      <experience>3</experience>
+    </employee>
+    <employee id="5">
+      <name>FFF</name>
+      <unitId>2</unitId>
+      <rank>2</rank>
+      <experience>1000</experience>
+    </employee>
+  </employees>
+</company>

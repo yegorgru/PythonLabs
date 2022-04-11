@@ -1,0 +1,16 @@
+<!ELEMENT company (units, employees)>
+<!ELEMENT units (unit*)>
+<!ELEMENT employees (employee*)>
+<!ELEMENT unit (unitName, unitEmployees)>
+<!ELEMENT employee (name, unitId, rank, experience)>
+<!ELEMENT unitName (#PCDATA)>
+<!ELEMENT unitEmployees (unitEmployee*)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT rank (#PCDATA)>
+<!ELEMENT experience (#PCDATA)>
+<!ELEMENT unitId (#PCDATA)>
+<!ELEMENT unitEmployee (#PCDATA)>
+    
+<!ATTLIST unit id CDATA #REQUIRED>
+<!ATTLIST unitEmployee id CDATA #REQUIRED>
+<!ATTLIST employee id CDATA #REQUIRED>
