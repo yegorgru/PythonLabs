@@ -348,80 +348,80 @@ while True:
 		manager.undoChanges()
 	elif len(words) >= 2 and words[0] == "add" and words[1] == "unit":
 		if not manager.checkEmpty(): continue
-		#try:
-		logger.DEBUG("create unit " + options["n"])
-		id = manager.insertUnit(Unit(options["n"]))
-		logger.INFO("Create unit. Id: " + str(id))
-		#except:
-			#logger.ERROR("Failed to add unit. Help:")
-			#helper.printHelpCommand("add unit")
+		try:
+			logger.DEBUG("create unit " + options["n"])
+			id = manager.insertUnit(Unit(options["n"]))
+			logger.INFO("Create unit. Id: " + str(id))
+		except:
+			logger.ERROR("Failed to add unit. Help:")
+			helper.printHelpCommand("add unit")
 	elif len(words) >= 2 and words[0] == "add" and words[1] == "employee":
 		if not manager.checkEmpty(): continue
-		#try:
-		unitId = int(options["u"])
-		if not manager.checkUnit(unitId):
-			logger.ERROR("Incorrect unit id")
-			continue
-		id = manager.insertEmployee(Employee(unitId, options["n"], int(options["r"]), int(options["e"])))
-		logger.INFO("Create employee. Id: " + str(id))
-		#except:
-		#	logger.ERROR("Failed to add employee. Help:")
-		#	helper.printHelpCommand("add employee")
+		try:
+			unitId = int(options["u"])
+			if not manager.checkUnit(unitId):
+				logger.ERROR("Incorrect unit id")
+				continue
+			id = manager.insertEmployee(Employee(unitId, options["n"], int(options["r"]), int(options["e"])))
+			logger.INFO("Create employee. Id: " + str(id))
+		except:
+			logger.ERROR("Failed to add employee. Help:")
+			helper.printHelpCommand("add employee")
 	elif len(words) >= 2 and words[0] == "update" and words[1] == "unit":
 		if not manager.checkEmpty(): continue
 		if len(words) < 3:
 			logger.ERROR("Incorrect use of update unit. Help:")
 			helper.printHelpCommand("update unit [UNIT ID]")
 			continue;
-		#try:
-		id = words[2]
-		manager.updateUnit(id, options)
-		logger.INFO("Update unit " + str(id))
-		#except:
-		#	logger.ERROR("Failed to update unit. Help:")
-		#	helper.printHelpCommand("update unit [UNIT ID]")
+		try:
+			id = words[2]
+			manager.updateUnit(id, options)
+			logger.INFO("Update unit " + str(id))
+		except:
+			logger.ERROR("Failed to update unit. Help:")
+			helper.printHelpCommand("update unit [UNIT ID]")
 	elif len(words) >= 2 and words[0] == "update" and words[1] == "employee":
 		if not manager.checkEmpty(): continue
 		if len(words) < 3:
 			logger.ERROR("Incorrect use of update employee. Help:")
 			helper.printHelpCommand("update employee [EMPLOYEE ID]")
 			continue;
-		#try:
-		if "u" in options:
-			unitId = int(options["u"])
-			if not manager.checkUnit(unitId):
-				logger.ERROR("Incorrect unit id")
-				continue
-		id = words[2]
-		manager.updateEmployee(id, options)
-		logger.INFO("Update employee " + str(id))
-		#except:
-		#	logger.ERROR("Failed to update employee. Help:")
-		#	helper.printHelpCommand("update employee [EMPLOYEE ID]")
+		try:
+			if "u" in options:
+				unitId = int(options["u"])
+				if not manager.checkUnit(unitId):
+					logger.ERROR("Incorrect unit id")
+					continue
+			id = words[2]
+			manager.updateEmployee(id, options)
+			logger.INFO("Update employee " + str(id))
+		except:
+			logger.ERROR("Failed to update employee. Help:")
+			helper.printHelpCommand("update employee [EMPLOYEE ID]")
 	elif len(words) >= 2 and words[0] == "delete" and words[1] == "unit":
 		if not manager.checkEmpty(): continue
 		if len(words) != 3:
 			logger.ERROR("Incorrect use of delete unit. Help:")
 			helper.printHelpCommand("delete unit [UNIT_ID]")
-		#try:
-		id = words[2]
-		manager.deleteUnit(id)
-		logger.INFO("Delete unit " + id)
-		#except:
-		#	logger.ERROR("Failed to delete unit. Help:")
-		#	helper.printHelpCommand("delete unit [UNIT_ID]")
+		try:
+			id = words[2]
+			manager.deleteUnit(id)
+			logger.INFO("Delete unit " + id)
+		except:
+			logger.ERROR("Failed to delete unit. Help:")
+			helper.printHelpCommand("delete unit [UNIT_ID]")
 	elif len(words) >= 2 and words[0] == "delete" and words[1] == "employee":
 		if not manager.checkEmpty(): continue
 		if len(words) != 3:
 			logger.ERROR("Incorrect use of delete employee. Help:")
 			helper.printHelpCommand("delete employee [EMPLOYEE_ID]")
-		#try:
-		id = words[2]
-		manager.deleteEmployee(id)
-		logger.INFO("Delete employee " + id)
-		#except:
-		#	logger.ERROR("Failed to delete employee. Help:")
-		#	helper.printHelpCommand("delete employee [EMPLOYEE_ID]")
+		try:
+			id = words[2]
+			manager.deleteEmployee(id)
+			logger.INFO("Delete employee " + id)
+		except:
+			logger.ERROR("Failed to delete employee. Help:")
+			helper.printHelpCommand("delete employee [EMPLOYEE_ID]")
 	elif len(words) >= 2 and words[0] == "select" and words[1] == "units":
 		if not manager.checkEmpty(): continue
 		manager.selectUnits(options)
@@ -429,16 +429,16 @@ while True:
 		if not manager.checkEmpty(): continue
 		manager.selectEmployees(options)
 	elif words[0] == "stat":
-		#try:
-		if not manager.checkEmpty(): continue
-		if "-u" in words:
-			manager.statU()
-		if "-r" in words:
-			manager.statR()
-		if "-e" in words:
-			manager.statE()
-		#except:
-		#	logger.ERROR("Failed to print statistics. Help:")
-		#	helper.printHelpCommand("stat")
+		try:
+			if not manager.checkEmpty(): continue
+			if "-u" in words:
+				manager.statU()
+			if "-r" in words:
+				manager.statR()
+			if "-e" in words:
+				manager.statE()
+		except:
+			logger.ERROR("Failed to print statistics. Help:")
+			helper.printHelpCommand("stat")
 	else:
 		logger.ERROR("Unknown command")
