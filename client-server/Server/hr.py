@@ -336,20 +336,20 @@ class HumanResourcesManager:
 				networkConn.send(message.encode())
 		elif len(words) >= 2 and words[0] == "update" and words[1] == "employee":
 			if not self.checkEmpty(networkConn): return
-			#try:
-			if "u" in options:
-				unitId = int(options["u"])
-				if not self.checkUnit(unitId):
-					message = "ERROR" + '#' + "Incorrect unit id"
-					networkConn.send(message.encode())
-					return
-			id = words[2]
-			self.updateEmployee(id, options)
-			message = "INFO" + '#' + "Update employee " + str(id)
-			networkConn.send(message.encode())
-			#except:
-			#	message = "ERROR" + '#' + "Failed to update employee"
-			#	networkConn.send(message.encode())
+			try:
+				if "u" in options:
+					unitId = int(options["u"])
+					if not self.checkUnit(unitId):
+						message = "ERROR" + '#' + "Incorrect unit id"
+						networkConn.send(message.encode())
+						return
+				id = words[2]
+				self.updateEmployee(id, options)
+				message = "INFO" + '#' + "Update employee " + str(id)
+				networkConn.send(message.encode())
+			except:
+				message = "ERROR" + '#' + "Failed to update employee"
+				networkConn.send(message.encode())
 		elif len(words) >= 2 and words[0] == "delete" and words[1] == "unit":
 			if not self.checkEmpty(networkConn): return
 			try:
