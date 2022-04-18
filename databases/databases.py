@@ -403,6 +403,7 @@ while True:
 		if len(words) != 3:
 			logger.ERROR("Incorrect use of delete unit. Help:")
 			helper.printHelpCommand("delete unit [UNIT_ID]")
+			continue
 		try:
 			id = words[2]
 			manager.deleteUnit(id)
@@ -415,6 +416,7 @@ while True:
 		if len(words) != 3:
 			logger.ERROR("Incorrect use of delete employee. Help:")
 			helper.printHelpCommand("delete employee [EMPLOYEE_ID]")
+			continue
 		try:
 			id = words[2]
 			manager.deleteEmployee(id)
