@@ -1,15 +1,15 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.core import serializers
-#from .models import Employee
+from .models import Employee
 
 
 def index(request):
-    #e = Employee(unitId=1)
-    #data = serializers.serialize("python", e.objects)
-    #context = {
-    #    'data': data
-    #}
-    return render(request, 'index.html')#, context)
+    data = list(Employee.objects.all().filter(unitId=0))
+    print(data)
+    context = {
+        'data': data
+    }
+    return render(request, 'index.html', context)
     #return HttpResponse("aaa")
 
