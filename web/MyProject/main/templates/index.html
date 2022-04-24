@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
     <header>
-        <title>Title</title>
+        <title>Employees by unit id</title>
     </header>
     <body>
-
-        <h1>My First Heading</h1>
-
-        <p>My first paragraph.</p>
-
+        <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="Submit" name="submit" value="Submit"/>
+        </form>
         <table>
             <thead>
                 <th>Name</th>

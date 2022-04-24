@@ -1,14 +1,18 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.core import serializers
 from .models import Employee
+from .forms import UserForm
 
 
 def index(request):
-    data = list(Employee.objects.all().filter(unitId=0))
+    form = UserForm(request.POST or None)
+    if form.is_valid():
+        id = form.cleaned_data.get("unit_id")
+    data = list(Employee.objects.all().filter(unitId=int(id)))
     print(data)
     context = {
-        'data': data
+        'data': data,
+        'form': form
     }
     return render(request, 'index.html', context)
     #return HttpResponse("aaa")
